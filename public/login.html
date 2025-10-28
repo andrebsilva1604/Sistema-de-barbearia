@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Barbearia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+    
+    <div id="particles-js"></div>
+
+    <div class="auth-container">
+        <h2>LOGIN</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="submit-button">Entrar</button>
+            <p id="form-message"></p>
+        </form>
+        <p>Não tem uma conta? <a href="/registro">Registre-se</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    
+    <script src="js/auth.js"></script>
+</body>
+</html>
