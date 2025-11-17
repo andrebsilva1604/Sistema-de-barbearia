@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMART BARBER</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Adicionando um ícone padrão de tesoura para a aba -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✂️</text></svg>">
 </head>
 
 <body>
@@ -13,10 +15,10 @@
         <nav class="navbar">
             <div class="logo">SMART BARBER</div>
             <ul class="nav-links">
-                <li><a href="/">Agendar</a></li>
+                <!-- ADICIONADO "class="active" AQUI -->
+                <li><a href="/" class="active">Agendar</a></li>
                 <li><a href="/dashboard">Meus Agendamentos</a></li>
             </ul>
-            <!-- NOVO CONTAINER PARA ALINHAR O NOME E O BOTÃO -->
             <div class="user-info-nav">
                 <span id="user-name-display" class="user-name"></span>
                 <button id="logout-button" class="nav-button">Sair</button>
@@ -29,8 +31,8 @@
             <div class="hero-content">
                 <h1>ESTILO E TRADIÇÃO</h1>
                 <h2>TRANSFORME SEU VISUAL</h2>
-                <p>Na SMART BARBER, cada detalhe é pensado para realçar sua personalidade. Cortes clássicos, modernos,
-                    barbas impecáveis entre outros.</p>
+                <p>Na SMART BARBER, cada detalhe é pensado para realçar sua personalidade. Cortes clássicos, modernos e
+                    barbas impecáveis.</p>
                 <a href="#schedule" class="cta-button">AGENDAR HORÁRIO</a>
             </div>
         </section>
@@ -38,13 +40,14 @@
         <section id="services" class="services-section">
             <h2>NOSSOS SERVIÇOS</h2>
             <div class="services-container" id="services-list">
-                </div>
+                <!-- Cards de serviço são inseridos aqui pelo main.js -->
+            </div>
         </section>
 
         <section id="testimonials" class="testimonials-section">
             <h2>O Que Nossos Clientes Dizem</h2>
             <div class="testimonials-container">
-
+                <!-- Card de Feedback 1 -->
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfeito" class="testimonial-avatar">
                     <p class="testimonial-text">"Serviço impecável e atendimento de primeira. O Sr. Roberto tem mãos de ouro! Com certeza a melhor barbearia da região."</p>
@@ -53,7 +56,7 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                 </div>
-
+                <!-- Card de Feedback 2 -->
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Cliente satisfeito" class="testimonial-avatar">
                     <p class="testimonial-text">"Ambiente super agradável e profissionais muito qualificados. O Lucas entendeu exatamente o corte que eu queria. Recomendo!"</p>
@@ -62,7 +65,7 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                 </div>
-
+                <!-- Card de Feedback 3 -->
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Cliente satisfeito" class="testimonial-avatar">
                     <p class="testimonial-text">"Agendamento pelo site é muito prático. Cheguei e fui atendido na hora, sem espera. O Fernando é um barbeiro excepcional."</p>
@@ -71,21 +74,23 @@
                         <div class="testimonial-stars">★★★★★</div>
                     </div>
                 </div>
-
             </div>
         </section>
+
         <section id="schedule" class="schedule-section">
             <h2>FAÇA SEU AGENDAMENTO</h2>
             <form id="schedule-form">
                 <div class="form-group">
                     <label for="service">Escolha o Serviço:</label>
                     <select id="service" name="service" required>
-                        </select>
+                        <!-- Inserido pelo main.js -->
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="barber">Escolha o Profissional:</label>
                     <select id="barber" name="barber" required>
-                        </select>
+                        <!-- Inserido pelo main.js -->
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="date">Data:</label>
@@ -107,5 +112,4 @@
     <div id="toast-notification" class="toast-hidden"></div>
 
 </body>
-
 </html>

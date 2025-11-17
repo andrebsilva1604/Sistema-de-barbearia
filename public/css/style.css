@@ -49,12 +49,22 @@ body {
     color: var(--light-text);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Transição suave */
+    padding-bottom: 5px; /* Adiciona espaço para a linha não grudar */
+    border-bottom: 2px solid transparent; /* Linha transparente por padrão */
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color); /* Linha aparece no hover */
 }
+
+/* --- ESTILO DO LINK ATIVO (PÁGINA ATUAL) --- */
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color); /* Linha dourada fixa */
+}
+
 
 .nav-button {
     padding: 0.5rem 1rem;
@@ -304,12 +314,92 @@ section h2 {
     padding: 8rem 5% 2rem;
 }
 
+/* --- ESTILOS DO CARD DE AGENDAMENTO (ATUALIZADO) --- */
 .appointment-card {
     background-color: #1a1a1a;
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1rem;
     border-left: 5px solid var(--primary-color);
+    /* Novo: usa Flexbox para alinhar o texto e o botão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.appointment-info {
+    /* Ocupa o espaço disponível, empurrando o botão para a direita */
+    flex-grow: 1;
+}
+
+/* --- ESTILOS DO BOTÃO DE CANCELAR --- */
+.cancel-button {
+    background-color: #dc3545; /* Vermelho perigo */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    /* Impede que o botão quebre linha */
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+
+/* --- ESTILOS DO MODAL DE CONFIRMAÇÃO --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-top: 4px solid var(--primary-color);
+}
+
+.modal-content h4 {
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+/* Ajusta o botão de confirmação para ser vermelho */
+.modal-buttons .submit-button {
+    background-color: #dc3545;
+}
+.modal-buttons .submit-button:hover {
+    background-color: #c82333;
 }
 /* --- ESTILOS DA NOTIFICAÇÃO (TOAST) --- */
 #toast-notification {
@@ -458,93 +548,3 @@ section h2 {
     font-size: 1.1rem; /* "Grande", como você pediu */
     color: var(--primary-color); /* Cor dourada para destacar */
 }
-
-
-
-
-/* --- ESTILOS DO CARD DE AGENDAMENTO (ATUALIZADO) --- */
-.appointment-card {
-    background-color: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    border-left: 5px solid var(--primary-color);
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    gap: 1rem; 
-}
-
-/* Div para as informações do agendamento */
-.appointment-info {
-    flex-grow: 1; /* Faz as informações ocuparem o espaço disponível */
-}
-
-/* --- ESTILOS DO BOTÃO DE CANCELAR --- */
-.cancel-button {
-    background-color: #dc3545; /* Vermelho perigo */
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    flex-shrink: 0; /* Impede que o botão encolha */
-}
-
-.cancel-button:hover {
-    background-color: #c82333;
-}
-
-/* --- ESTILOS DO MODAL DE CONFIRMAÇÃO --- */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.modal-content {
-    background-color: #1a1a1a;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    border-top: 4px solid var(--primary-color);
-}
-
-.modal-content h4 {
-    font-family: 'Teko', sans-serif;
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.modal-content p {
-    margin-bottom: 1.5rem;
-    color: #ccc;
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-}
-
-/* Ajusta o botão de confirmação para ser vermelho */
-.modal-buttons .submit-button {
-    background-color: #dc3545;
-}
-.modal-buttons .submit-button:hover {
-    background-color: #c82333;
-}
-
