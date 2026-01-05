@@ -1,6 +1,7 @@
 =========================================================================
 PROJETO: SMART BARBER - SISTEMA DE AGENDAMENTO WEB (TCC)
-AUTOR: [SEU NOME AQUI]
+AUTOR: André Biscassi Da Silva
+
 =========================================================================
 
 DESCRIÇÃO:
